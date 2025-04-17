@@ -4,7 +4,7 @@ from datetime import datetime
 import time
 
 # Folder to save the video and images
-save_folder = r"C:\Users\srisa\Downloads\lot images"
+save_folder = r"C:\Users\user1\Downloads\lot images"
 os.makedirs(save_folder, exist_ok=True)
 
 # Connect to USB CCTV camera (usually index 1 or 2)
@@ -20,8 +20,8 @@ frame_height = int(cam.get(4))
 
 # Setup video writer
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-video_filename = os.path.join(save_folder, f"lot_{timestamp}.avi")
-fourcc = cv2.VideoWriter_fourcc(*'XVID')
+video_filename = os.path.join(save_folder, f"lot_{timestamp}.mp4")
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 fps = 20.0
 out = cv2.VideoWriter(video_filename, fourcc, fps, (frame_width, frame_height))
 
